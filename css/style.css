@@ -1,0 +1,737 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap");
+
+:root {
+  --bg: #010103;
+  --border: 0.1rem solid rgba(24, 22, 22, 0.521);
+  --color-black: #000000;
+  --color-white: #ffffff;
+  --color-red: #cb2229;
+  --color-yellow: #efb33a;
+  --color-blue: #2c2caf;
+}
+
+* {
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  text-transform: capitalize;
+  transition: 0.2s linear;
+}
+
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+  scroll-padding-top: 9rem;
+  scroll-behavior: smooth;
+}
+
+html::-webkit-scrollbar {
+  width: 1rem;
+}
+
+html::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+html::-webkit-scrollbar-thumb {
+  background-color: var(--color-white);
+  border-radius: 5rem;
+}
+
+body {
+  background: var(--bg);
+}
+
+.section {
+  padding: 2rem 7%;
+  margin: 100px 0;
+}
+
+.heading {
+  text-align: center;
+  color: var(--color-white);
+  text-transform: uppercase;
+  padding-bottom: 3.5rem;
+  font-size: 4rem;
+}
+
+.heading span {
+  color: var(--color-yellow);
+  text-transform: uppercase;
+}
+
+#logo img {
+  width: 40%;
+  height: 30%;
+}
+
+.kime-header {
+  background: var(--bg);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem 7%;
+  border-bottom: var(--border);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+.kime-header .logo img {
+  height: 3.5rem;
+}
+.kime-header .navbar {
+  margin-left: 150px;
+}
+.kime-header .navbar a {
+  margin: 0 1rem;
+  font-size: 1.6rem;
+  color: var(--color-white);
+  margin-left: 50px;
+}
+
+.kime-header .navbar a:hover {
+  color: var(--color-yellow);
+  border-bottom: 0.1rem solid var(--color-yellow);
+  padding-bottom: 0.5rem;
+}
+
+.kime-header .icons div {
+  color: var(--color-white);
+  cursor: pointer;
+  font-size: 2.5rem;
+  margin-left: 2rem;
+}
+
+.kime-header .icons div:hover {
+  color: var(--color-yellow);
+}
+
+#menu-btn {
+  display: none;
+}
+
+.kime-header .search-form {
+  position: absolute;
+  top: 115%;
+  right: 7%;
+  background: var(--color-white);
+  width: 50rem;
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  transform: scaleY(0);
+  transform-origin: top;
+}
+
+/* start slide */
+
+.slider {
+  position: relative;
+  width: 100%;
+}
+.myslide {
+  height: 655px;
+  display: none;
+  overflow: hidden;
+}
+
+.prev,
+.next {
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+  font-size: 50px;
+  padding: 15px;
+  cursor: pointer;
+  color: var(--color-white);
+  transition: 0.1s;
+  user-select: none;
+}
+.prev:hover,
+.next:hover {
+  color: var(--color-blue);
+}
+.next {
+  right: 0;
+}
+.dotsbox {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  bottom: 20px;
+  cursor: pointer;
+}
+
+.dot {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  border: 3px solid var(--color-white);
+  border-radius: 50%;
+  margin: 0 10px;
+  cursor: pointer;
+}
+
+/* javascript */
+.active,
+.dot:hover {
+  border-color: var(--color-blue); /* blue */
+}
+/* /javascript */
+
+/* muslide add fade */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {
+    opacity: 0.8;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.8;
+  }
+  to {
+    opacity: 1;
+  }
+}
+/* /muslide add fade */
+
+.txt {
+  position: absolute;
+  color: var(--color-yellow);
+  letter-spacing: 2px;
+  line-height: 35px;
+  top: 40%;
+  left: 15%;
+  -webkit-animation-name: posi;
+  -webkit-animation-duration: 2s;
+  animation-name: posi;
+  animation-duration: 2s;
+  z-index: 1;
+}
+
+@-webkit-keyframes posi {
+  from {
+    left: 25%;
+  }
+  to {
+    left: 15%;
+  }
+}
+
+@keyframes posi {
+  from {
+    left: 25%;
+  }
+  to {
+    left: 15%;
+  }
+}
+
+.txt h1 {
+  color: #00a7ff; /* blue */
+  font-size: 50px;
+  margin-bottom: 20px;
+}
+.txt p {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.img {
+  transform: scale(1.5, 1.5);
+  -webkit-animation-name: zoomin;
+  -webkit-animation-duration: 40s;
+  animation-name: zoomin;
+  animation-duration: 40s;
+}
+@-webkit-keyframes zoomin {
+  from {
+    transform: scale(1, 1);
+  }
+  to {
+    transform: scale(1.5, 1.5);
+  }
+}
+
+@keyframes zoomin {
+  from {
+    transform: scale(1, 1);
+  }
+  to {
+    transform: scale(1.5, 1.5);
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .myslide {
+    height: 500px;
+  }
+  @media screen and (max-width: 800px) {
+    .prev {
+      left: 0;
+    }
+  }
+  .txt {
+    letter-spacing: 2px;
+    line-height: 25px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-animation-name: posi2;
+    -webkit-animation-duration: 2s;
+    animation-name: posi2;
+    animation-duration: 2s;
+  }
+
+  @-webkit-keyframes posi2 {
+    from {
+      top: 35%;
+    }
+    to {
+      top: 50%;
+    }
+  }
+
+  @keyframes posi2 {
+    from {
+      top: 35%;
+    }
+    to {
+      top: 50%;
+    }
+  }
+
+  .txt h1 {
+    font-size: 40px;
+  }
+  .txt p {
+    font-size: 13px;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  .txt h1 {
+    font-size: 30px;
+    margin-bottom: 20px;
+  }
+  .sign {
+    margin-right: 20px;
+  }
+  .sign a {
+    font-size: 12px;
+  }
+}
+
+/* end slide */
+
+.kime-home .content {
+  max-width: 60rem;
+}
+
+.kime-home .content h3 {
+  font-size: 6rem;
+  text-transform: uppercase;
+  color: var(--color-white);
+}
+
+.kime-home .content p {
+  font-size: 2rem;
+  font-weight: lighter;
+  line-height: 1.8;
+  padding: 1rem 0;
+  color: var(--color-white);
+}
+
+.kime-about .row {
+  display: flex;
+  align-items: center;
+  background: var(--black);
+  border: solid var(--color-white) 5px;
+  border-radius: 20px;
+  flex-wrap: wrap;
+}
+
+.kime-about .row .image {
+  flex: 1 1 45rem;
+}
+
+.kime-about .row .image img {
+  width: 100%;
+  border-radius: 20px;
+}
+.kime-about .row .content {
+  flex: 1 1 45rem;
+  padding: 2rem;
+}
+
+.kime-about .row .content h3 {
+  font-size: 3rem;
+  color: #fff;
+}
+
+.kime-about .row .content p {
+  font-size: 1.6rem;
+  color: #ccc;
+  padding: 1rem 0;
+  line-height: 1.8;
+}
+
+.kime-service .box-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  gap: 1.5rem;
+}
+
+.kime-service .box-container .box {
+  padding: 4rem 1rem;
+  text-align: center;
+  border: var(--border);
+  border-radius: 20px;
+  border-color: var(--color-white);
+}
+
+.kime-service .box-container .box img {
+  height: 20rem;
+  width: 30rem;
+  border-radius: 5px;
+  padding-right: 5px;
+}
+
+.btn {
+  margin-top: 1rem;
+  display: inline-block;
+  padding: 0.9rem 3rem;
+  font-size: 1.7rem;
+  color: var(--color-white);
+  background: var(--color-yellow);
+  cursor: pointer;
+}
+
+.btn:hover {
+  letter-spacing: 0.2rem;
+}
+
+.kime-service .box-container .box img:hover {
+  border-radius: 30px;
+}
+
+.kime-service .box-container .box h3 {
+  color: var(--color-white);
+  font-size: 2rem;
+  padding: 1rem 0;
+}
+
+.kime-service .box-container .box .price {
+  color: var(--color-white);
+  font-size: 2.5rem;
+  padding: 0.5rem 0;
+}
+
+.kime-service .box-container .box .price span {
+  font-size: 1.5rem;
+  text-decoration: line-through;
+  font-weight: lighter;
+}
+
+.kime-service .box-container .box:hover {
+  background: var(--color-yellow);
+}
+
+.kime-service .box-container .box:hover > * {
+  color: var(--black);
+}
+
+.kime-project .box-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  gap: 1.5rem;
+}
+
+.kime-project .box-container .box {
+  text-align: center;
+  border: var(--border);
+  padding: 2rem;
+  border-radius: 20px;
+}
+
+.box1 {
+  background-color: var(--color-blue);
+}
+.box2 {
+  background-color: var(--color-yellow);
+}
+.box3 {
+  background-color: var(--color-red);
+}
+
+.kime-project .box-container .box .icons a:hover {
+  background: var(--color-yellow);
+}
+
+.kime-project .box-container .box:hover {
+  margin: -30px -5px;
+}
+
+.kime-project .box-container .box {
+  border-color: var(--color-white);
+}
+
+.kime-project .box-container .box .image {
+  padding: 2.5rem 0;
+}
+
+.kime-project .box-container .box .image img {
+  height: 20rem;
+  border-radius: 20px;
+}
+
+.kime-project .box-container .box .content h3 {
+  color: #fff;
+  font-size: 2.5rem;
+}
+
+.kime-project .box-container .box .content .stars {
+  padding: 1.5rem;
+}
+
+.kime-project .box-container .box .content .stars i {
+  font-size: 1.7rem;
+  color: var(--color-white);
+}
+
+.kime-project .box-container .box .content .price {
+  color: var(--color-white);
+  font-size: 2.5rem;
+}
+
+.kime-project .box-container .box .content .price span {
+  text-decoration: line-through;
+  font-weight: lighter;
+  font-size: 1.5rem;
+}
+
+.kime-review .box-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  gap: 1.5rem;
+}
+
+.kime-review .box-container .box {
+  border: var(--border);
+  text-align: center;
+  padding: 3rem 2rem;
+}
+
+.kime-review .box-container .box p {
+  font-size: 1.5rem;
+  line-height: 1.8;
+  color: #ccc;
+  padding: 2rem 0;
+}
+
+.kime-review .box-container .box .user {
+  height: 7rem;
+  width: 7rem;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.kime-review .box-container .box h3 {
+  padding: 1rem 0;
+  font-size: 2rem;
+  color: var(--color-white);
+}
+
+.kime-review .box-container .box .stars i {
+  font-size: 1.5rem;
+  color: var(--color-yellow);
+}
+
+.kime-contact .row {
+  display: flex;
+  background: rgba(20, 20, 20, 0.699);
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.kime-contact .row .map {
+  flex: 1 1 45rem;
+  width: 100%;
+  object-fit: cover;
+}
+
+.kime-contact .row form {
+  flex: 1 1 45rem;
+  padding: 5rem 2rem;
+  text-align: center;
+}
+
+.kime-contact .row form h3 {
+  text-transform: uppercase;
+  font-size: 3.5rem;
+  color: var(--color-white);
+}
+
+.kime-contact .row form .inputBox {
+  display: flex;
+  align-items: center;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  background: var(--bg);
+  border: var(--border);
+}
+
+.kime-contact .row form .inputBox span {
+  color: var(--color-white);
+  font-size: 2rem;
+  padding-left: 2rem;
+}
+
+.kime-contact .row form .inputBox input {
+  width: 100%;
+  padding: 2rem;
+  font-size: 1.7rem;
+  color: var(--color-white);
+  text-transform: none;
+  background: none;
+}
+
+.kime-footer {
+  background: var(--color-black);
+  text-align: center;
+}
+
+.kime-footer .share {
+  padding: 1rem 0;
+}
+
+.kime-footer .share a {
+  height: 5rem;
+  width: 5rem;
+  line-height: 5rem;
+  font-size: 2rem;
+  color: var(--color-white);
+  border: var(--border);
+  margin: 0.3rem;
+  border-radius: 50%;
+}
+
+.kime-footer .share a:hover {
+  background-color: var(--color-yellow);
+}
+
+.kime-footer .links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 2rem 0;
+  gap: 1rem;
+}
+
+.kime-footer .links a {
+  padding: 0.7rem 2rem;
+  color: var(--color-white);
+  border: var(--border);
+  font-size: 2rem;
+}
+
+.kime-footer .links a:hover {
+  background: var(--color-yellow);
+}
+
+.kime-footer .credit {
+  font-size: 2rem;
+  color: var(--color-white);
+  font-weight: lighter;
+  padding: 1.5rem;
+}
+
+.kime-footer .credit span {
+  color: var(--color-yellow);
+}
+
+/* media queries  */
+@media (max-width: 991px) {
+  html {
+    font-size: 55%;
+  }
+
+  .kime-header {
+    padding: 1.5rem 2rem;
+  }
+
+  section {
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  #menu-btn {
+    display: inline-block;
+  }
+
+  .kime-header .navbar {
+    position: absolute;
+    top: 100%;
+    right: -100%;
+    background: var(--color-black);
+
+    width: 70%;
+    height: calc(100vh - 9.5rem);
+  }
+
+  .kime-header .navbar.active {
+    right: 0;
+  }
+
+  .kime-header .navbar a {
+    color: var(--color-white);
+    display: block;
+    margin: 1.5rem;
+    padding: 0.5rem;
+    font-size: 2rem;
+  }
+
+  .kime-header .search-form {
+    width: 90%;
+    right: 2rem;
+  }
+
+  .kime-home {
+    background-position: left;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .kime-home .content h3 {
+    font-size: 4.5rem;
+  }
+
+  .kime-home .content p {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 450px) {
+  html {
+    font-size: 50%;
+  }
+}
